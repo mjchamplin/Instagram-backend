@@ -43,7 +43,7 @@ class AdminPicturesController extends MvcAdminController {
   private $api_calls = array(); 
   private $client_id = '9110e8c268384cb79901a96e3a16f588';
   private $api_pre = 'https://api.instagram.com/v1/tags/';
-  private $cache_path = '../cache/'; //path from ABSPATH, which is wordpress content for the wordpress install
+  private $cache_path = 'cache/'; //path from ABSPATH, which is wordpress content for the wordpress install
   private $pictures = array();
   private $max = 300;
 
