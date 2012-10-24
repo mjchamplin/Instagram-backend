@@ -238,7 +238,7 @@ class AdminPicturesController extends MvcAdminController {
   }
 
   private function get_filename( $name ){
-    return ABSPATH . $this->cache_path . $name . '.json';
+    return ABSPATH . $this->cache_path . $name . '.js';
   }
 
   private function clear_or_create_cache_file( $name ){
@@ -343,7 +343,7 @@ class AdminPicturesController extends MvcAdminController {
       $this->cache_files_written[] = $name;
       
       //needs a json bracket... actually, needs the entire geojson header
-      $data = '{"type":"FeatureCollection","features":['.$data;
+      $data = 'getPhotos({"type":"FeatureCollection","features":['.$data;
     } else {
       $data = ','.$data;
     }
@@ -364,7 +364,7 @@ class AdminPicturesController extends MvcAdminController {
     $file = fopen( $filename, 'a+' );
     
     //end the geojson wrapper
-    fwrite( $file, ']}');
+    fwrite( $file, ']});');
     
     fclose( $file );
     
